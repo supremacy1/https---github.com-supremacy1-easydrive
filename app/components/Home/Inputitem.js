@@ -1,17 +1,20 @@
 import React from 'react'
 import Image from "next/image";
-function Inputitem() {
+
+ 
+function Inputitem({type}) {
   return (
     <div className='bg-slate-200 p-3 rounded-lg mt-3
     flex items-center gap-4'>
-        <Image src='/next.svg'
+        <Image src={type=='source'?'/pk.jpg':'/pk1.jpg'}
         width={20}
         height={20}
         />
-        <input type='text' placeholder='pickup loacation'
-        className='bg-transparent w-full'
+        <input type='text'
+         placeholder={type=='source'?'pickup loacation':'Dropoff location'}
+        className='bg-transparent w-full outline-none'
         />
-    </div>
+    </div> 
   )
 }
 
